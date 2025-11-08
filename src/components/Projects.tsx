@@ -1,12 +1,22 @@
 import React from 'react';
 import './Projects.css';
 
-const Projects = () => {
-  const projects = [
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  image: string;
+  github: string;
+  demo: string;
+}
+
+const Projects: React.FC = () => {
+  const projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce application with payment integration, product management, and user authentication.',
+      title: 'ECサイトプラットフォーム',
+      description: '決済連携、商品管理、ユーザー認証機能を備えたフルスタックのECアプリケーションです。',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
       image: '🛒',
       github: 'https://github.com/yourusername/project1',
@@ -14,8 +24,8 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management tool with real-time updates, team workspaces, and progress tracking.',
+      title: 'タスク管理アプリ',
+      description: 'リアルタイム更新、チームワークスペース、進捗追跡機能を持つ協働タスク管理ツールです。',
       technologies: ['React', 'Firebase', 'TypeScript', 'Tailwind'],
       image: '📋',
       github: 'https://github.com/yourusername/project2',
@@ -23,8 +33,8 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application with location-based forecasts, interactive maps, and weather alerts.',
+      title: '天気予報ダッシュボード',
+      description: '位置情報ベースの予報、インタラクティブマップ、天気アラート機能を備えたレスポンシブな天気アプリです。',
       technologies: ['Vue.js', 'OpenWeather API', 'Chart.js'],
       image: '🌤️',
       github: 'https://github.com/yourusername/project3',
@@ -32,8 +42,8 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: 'Portfolio Generator',
-      description: 'A tool to help developers create beautiful portfolio websites with customizable themes and templates.',
+      title: 'ポートフォリオジェネレーター',
+      description: 'カスタマイズ可能なテーマとテンプレートで、開発者が美しいポートフォリオサイトを作成できるツールです。',
       technologies: ['Next.js', 'Markdown', 'Styled Components'],
       image: '🎨',
       github: 'https://github.com/yourusername/project4',
@@ -44,8 +54,8 @@ const Projects = () => {
   return (
     <section id="projects" className="projects">
       <div className="projects-container">
-        <h2 className="section-title">Featured Projects</h2>
-        <p className="section-subtitle">Some of my recent work</p>
+        <h2 className="section-title">注目プロジェクト</h2>
+        <p className="section-subtitle">最近の作品をご紹介します</p>
 
         <div className="projects-grid">
           {projects.map((project) => (
@@ -70,7 +80,7 @@ const Projects = () => {
                   </svg>
                 </a>
                 <a href={project.demo} className="project-link" target="_blank" rel="noopener noreferrer">
-                  <span>Live Demo</span>
+                  <span>デモ</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                     <polyline points="15 3 21 3 21 9"></polyline>

@@ -1,14 +1,14 @@
 import React from 'react';
 import './Footer.css';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+const Footer: React.FC = () => {
+  const currentYear: number = new Date().getFullYear();
 
   return (
     <footer id="contact" className="footer">
       <div className="footer-content">
-        <h2 className="footer-title">Let's Connect</h2>
-        <p className="footer-subtitle">I'm always open to new opportunities and collaborations</p>
+        <h2 className="footer-title">つながりましょう</h2>
+        <p className="footer-subtitle">新しい機会やコラボレーションをお待ちしています</p>
 
         <div className="social-links">
           <a href="https://github.com/yourusername" className="social-link" target="_blank" rel="noopener noreferrer">
@@ -37,12 +37,12 @@ const Footer = () => {
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
-            <span>Email</span>
+            <span>メール</span>
           </a>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Your Name. Built with React & Vite</p>
+          <p>&copy; {currentYear} あなたの名前. React & Viteで構築</p>
         </div>
       </div>
     </footer>
