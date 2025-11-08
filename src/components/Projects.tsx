@@ -7,55 +7,85 @@ interface Project {
   description: string;
   technologies: string[];
   image: string;
-  github: string;
-  demo: string;
+  github?: string;
+  article?: string;
 }
 
 const Projects: React.FC = () => {
+  // 技術スタックの色マッピング
+  const techColors: { [key: string]: string } = {
+    'React': '#61DAFB',
+    'Next.js': '#000000',
+    'next.js': '#000000',
+    'Node.js': '#339933',
+    'TypeScript': '#3178C6',
+    'JavaScript': '#F7DF1E',
+    'Python': '#3776AB',
+    'PHP': '#777BB4',
+    'php': '#777BB4',
+    'Rust': '#CE412B',
+    'Kotlin': '#7F52FF',
+    'C#': '#239120',
+    'C': '#A8B9CC',
+    'Flutter': '#02569B',
+    'Tauri2.0': '#FFC131',
+    'PostgreSQL': '#4169E1',
+    'MySQL': '#4479A1',
+    'Oracle': '#F80000',
+    'SQLite': '#003B57',
+    'Firebase': '#FFCA28',
+    'FireBase': '#FFCA28',
+    'TensorFlow': '#FF6F00',
+    'PyTorch': '#EE4C2C',
+    'Tailwind': '#06B6D4',
+    'TailwindCSS': '#06B6D4'
+  };
+
+  const getTechColor = (tech: string): string => {
+    return techColors[tech] || '#667eea';
+  };
+
   const projects: Project[] = [
     {
       id: 1,
-      title: 'ECサイトプラットフォーム',
-      description: '決済連携、商品管理、ユーザー認証機能を備えたフルスタックのECアプリケーションです。',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      image: '🛒',
-      github: 'https://github.com/yourusername/project1',
-      demo: 'https://demo.example.com'
+      title: 'タスク管理アプリ',
+      description: '',
+      technologies: ['React', 'php', 'TypeScript', 'Tailwind'],
+      image: '🪧',
+      github: 'https://github.com/tarotarotaros/TaskAppView',
+      article: 'https://zenn.dev/tarotarotaros/articles/2024-10-18_1'
     },
     {
       id: 2,
-      title: 'タスク管理アプリ',
-      description: 'リアルタイム更新、チームワークスペース、進捗追跡機能を持つ協働タスク管理ツールです。',
-      technologies: ['React', 'Firebase', 'TypeScript', 'Tailwind'],
-      image: '📋',
-      github: 'https://github.com/yourusername/project2',
-      demo: 'https://demo.example.com'
+      title: '頭痛記録アプリ',
+      description: 'ただただ頭痛を記録するためだけのアプリ',
+      technologies: ['Flutter'],
+      image: '🤕',
+      github: 'https://github.com/tarotarotaros/MyHeadacheApp',
+      article: 'https://zenn.dev/tarotarotaros/articles/2025-01-11_1'
     },
     {
       id: 3,
-      title: '天気予報ダッシュボード',
-      description: '位置情報ベースの予報、インタラクティブマップ、天気アラート機能を備えたレスポンシブな天気アプリです。',
-      technologies: ['Vue.js', 'OpenWeather API', 'Chart.js'],
-      image: '🌤️',
-      github: 'https://github.com/yourusername/project3',
-      demo: 'https://demo.example.com'
+      title: 'プロジェクト計画アプリ',
+      description: 'プロセスフローダイアグラムを用いたプロジェクト計画用のアプリ',
+      technologies: ['Tauri2.0', 'Rust', 'SQLite'],
+      image: '🗓️',
+      github: 'https://github.com/tarotarotaros/AIR-Project'
     },
     {
       id: 4,
-      title: 'ポートフォリオジェネレーター',
-      description: 'カスタマイズ可能なテーマとテンプレートで、開発者が美しいポートフォリオサイトを作成できるツールです。',
-      technologies: ['Next.js', 'Markdown', 'Styled Components'],
-      image: '🎨',
-      github: 'https://github.com/yourusername/project4',
-      demo: 'https://demo.example.com'
+      title: 'バイク駐輪場共有アプリ',
+      description: 'バイクの駐輪場をサービス内で共有するアプリ',
+      technologies: ['next.js', 'TypeScript', 'FireBase'],
+      image: '🏍️',
     }
   ];
 
   return (
     <section id="projects" className="projects">
       <div className="projects-container">
-        <h2 className="section-title">注目プロジェクト</h2>
-        <p className="section-subtitle">最近の作品をご紹介します</p>
+        <h2 className="section-title">成果物</h2>
+        <p className="section-subtitle">作品をご紹介します</p>
 
         <div className="projects-grid">
           {projects.map((project) => (
@@ -66,27 +96,41 @@ const Projects: React.FC = () => {
 
               <div className="project-tech">
                 {project.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
+                  <span
+                    key={index}
+                    className="tech-tag"
+                    style={{
+                      backgroundColor: `${getTechColor(tech)}20`,
+                      borderColor: getTechColor(tech),
+                      color: getTechColor(tech) === '#000000' ? '#ffffff' : getTechColor(tech)
+                    }}
+                  >
+                    {tech}
+                  </span>
                 ))}
               </div>
 
               <div className="project-links">
-                <a href={project.github} className="project-link" target="_blank" rel="noopener noreferrer">
-                  <span>GitHub</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                  </svg>
-                </a>
-                <a href={project.demo} className="project-link" target="_blank" rel="noopener noreferrer">
-                  <span>デモ</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                  </svg>
-                </a>
+                {project.github && (
+                  <a href={project.github} className="project-link" target="_blank" rel="noopener noreferrer">
+                    <span>GitHub</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                )}
+                {project.article && (
+                  <a href={project.article} className="project-link" target="_blank" rel="noopener noreferrer">
+                    <span>Article</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                )}
               </div>
             </div>
           ))}

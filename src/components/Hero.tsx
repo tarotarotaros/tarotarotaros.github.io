@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
 
+
 const Hero: React.FC = () => {
   return (
     <section id="about" className="hero">
@@ -8,17 +9,7 @@ const Hero: React.FC = () => {
         <div className="hero-text">
           <div className="avatar-container">
             <div className="avatar">
-              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="50" fill="url(#avatarGradient)"/>
-                <circle cx="50" cy="40" r="15" fill="rgba(255,255,255,0.9)"/>
-                <circle cx="50" cy="75" r="22" fill="rgba(255,255,255,0.9)"/>
-                <defs>
-                  <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{stopColor: '#667eea', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#764ba2', stopOpacity: 1}} />
-                  </linearGradient>
-                </defs>
-              </svg>
+              <img src="/avatar.png" alt="tarotarotaros" />
             </div>
           </div>
           <h1 className="hero-title">

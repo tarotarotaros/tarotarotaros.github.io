@@ -6,23 +6,24 @@ const Skills: React.FC = () => {
     {
       title: 'プログラミング言語',
       skills: [
+        { name: 'C#', color: '#239120' },
+        { name: 'C', color: '#A8B9CC' },
         { name: 'JavaScript', color: '#F7DF1E' },
         { name: 'TypeScript', color: '#3178C6' },
         { name: 'Python', color: '#3776AB' },
-        { name: 'Java', color: '#007396' },
-        { name: 'C#', color: '#239120' },
-        { name: 'Go', color: '#00ADD8' },
+        { name: 'PHP', color: '#777BB4' },
+        { name: 'Rust', color: '#CE412B' },
+        { name: 'Kotlin', color: '#7F52FF' }
       ]
     },
     {
       title: 'フレームワーク',
       skills: [
         { name: 'React', color: '#61DAFB' },
-        { name: 'Vue.js', color: '#4FC08D' },
         { name: 'Next.js', color: '#000000' },
         { name: 'Node.js', color: '#339933' },
-        { name: 'Django', color: '#092E20' },
-        { name: 'Spring Boot', color: '#6DB33F' },
+        { name: 'Flutter', color: '#02569B' },
+        { name: 'Tauri2.0', color: '#FFC131' },
       ]
     },
     {
@@ -30,19 +31,25 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'PostgreSQL', color: '#4169E1' },
         { name: 'MySQL', color: '#4479A1' },
-        { name: 'MongoDB', color: '#47A248' },
-        { name: 'Redis', color: '#DC382D' },
-        { name: 'SQLite', color: '#003B57' },
+        { name: 'Oracle', color: '#F80000' },
       ]
     },
     {
-      title: 'AI開発',
+      title: 'AI/機械学習',
       skills: [
         { name: 'TensorFlow', color: '#FF6F00' },
         { name: 'PyTorch', color: '#EE4C2C' },
-        { name: 'OpenAI API', color: '#412991' },
-        { name: 'LangChain', color: '#1C3C3C' },
-        { name: 'Hugging Face', color: '#FFD21E' },
+        { name: 'Claude Code', color: '#D97757' },
+        { name: 'Roo Code', color: '#FFA500' },
+        { name: 'GitHub Copilot', color: '#6CC644' },
+        { name: 'Vertex AI', color: '#4285F4' },
+        { name: 'LiteLLM', color: '#8A2BE2' }
+      ]
+    },
+    {
+      title: 'クラウド',
+      skills: [
+        { name: 'Firebase', color: '#FFCA28' }
       ]
     },
   ];

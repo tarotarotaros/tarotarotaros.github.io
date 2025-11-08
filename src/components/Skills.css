@@ -1,11 +1,15 @@
 .skills {
-  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem 4rem;
   background: linear-gradient(135deg, #0f0f14 0%, #1a1a24 100%);
 }
 
 .skills-container {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .skills-title {
