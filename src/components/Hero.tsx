@@ -22,8 +22,7 @@ const Hero: React.FC = () => {
             革新的なソリューションの構築と新しい技術の習得に情熱を注いでいます。
           </p>
           <div className="hero-buttons">
-            <a href="#projects" className="btn btn-primary">プロジェクトを見る</a>
-            <a href="#contact" className="btn btn-secondary">お問い合わせ</a>
+            <a href="#projects" className="btn btn-primary">成果物を見る</a>
           </div>
         </div>
         <div className="hero-visual">
