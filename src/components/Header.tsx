@@ -12,9 +12,10 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header-content">
-        <div className="logo">ポートフォリオ</div>
+        <div className="logo">tarotarotaros</div>
         <nav className="nav">
           <button onClick={() => scrollToSection('about')} className="nav-link">自己紹介</button>
+          <button onClick={() => scrollToSection('skills')} className="nav-link">技術スタック</button>
           <button onClick={() => scrollToSection('projects')} className="nav-link">プロジェクト</button>
           <button onClick={() => scrollToSection('contact')} className="nav-link">連絡先</button>
         </nav>
