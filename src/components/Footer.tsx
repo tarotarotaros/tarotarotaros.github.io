@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Footer.css';
 
 interface ZennArticle {
@@ -12,34 +12,24 @@ interface ZennArticle {
 
 const Footer: React.FC = () => {
   const currentYear: number = new Date().getFullYear();
+  const [zennArticles, setZennArticles] = useState<ZennArticle[]>([]);
 
-  // 静的データとして最新記事を定義（定期的に手動更新するか、ビルド時に自動取得）
-  const zennArticles: ZennArticle[] = [
-    {
-      id: 477929,
-      title: "Calude Code の使用状況を確認したい",
-      emoji: "📊",
-      published_at: "2025-11-03T00:00:01.856+09:00",
-      path: "/tarotarotaros/articles/2025-11-02_1",
-      liked_count: 1
-    },
-    {
-      id: 475988,
-      title: "Firebase Hosting カスタムドメイン（お名前.com）設定手順",
-      emoji: "🔥",
-      published_at: "2025-10-27T00:00:00.000+09:00",
-      path: "/tarotarotaros/articles/2025-10-27_1",
-      liked_count: 0
-    },
-    {
-      id: 466220,
-      title: "AWS認定試験　CLFとSAAを取ってみた",
-      emoji: "📋",
-      published_at: "2025-10-01T00:00:05.222+09:00",
-      path: "/tarotarotaros/articles/2025-09-30_1",
-      liked_count: 0
-    }
-  ];
+  // JSONファイルから記事データを読み込む
+  useEffect(() => {
+    fetch('/zenn-articles.json')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch articles');
+        }
+        return response.json();
+      })
+      .then((data) => setZennArticles(data))
+      .catch((error) => {
+        console.error('Error loading Zenn articles:', error);
+        // フォールバック: エラー時は空配列を設定
+        setZennArticles([]);
+      });
+  }, []);
 
   return (
     <footer id="contact" className="footer">
