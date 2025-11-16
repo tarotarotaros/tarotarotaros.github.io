@@ -49,7 +49,7 @@ const Projects: React.FC = () => {
     {
       id: 1,
       title: 'タスク管理アプリ',
-      description: '',
+      description: 'シンプルなUIでわかりやすくタスクを管理。カンバンボード、マークダウン対応、担当者管理機能を備えたチームタスク管理ツール',
       technologies: ['React', 'php', 'TypeScript', 'Tailwind'],
       image: '🪧',
       github: 'https://github.com/tarotarotaros/TaskAppView',
@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
     {
       id: 2,
       title: '頭痛記録アプリ',
-      description: 'ただただ頭痛を記録するためだけのアプリ',
+      description: '生成AIの力を借りて半日で作成した頭痛専用記録アプリ。Googleスプレッドシートと連携し、スマホから簡単に記録できるAndroidアプリ',
       technologies: ['Flutter'],
       image: '🤕',
       github: 'https://github.com/tarotarotaros/MyHeadacheApp',
@@ -67,7 +67,7 @@ const Projects: React.FC = () => {
     {
       id: 3,
       title: 'プロジェクト計画アプリ',
-      description: 'プロセスフローダイアグラムを用いたプロジェクト計画用のアプリ',
+      description: 'Tauri 2.0とReact Flowでプロセスフローを可視化。タスクと成果物の依存関係を直感的に把握できるオフライン対応デスクトップアプリ',
       technologies: ['Tauri2.0', 'Rust', 'SQLite', 'React'],
       image: '🗓️',
       github: 'https://github.com/tarotarotaros/AIR-Project',
