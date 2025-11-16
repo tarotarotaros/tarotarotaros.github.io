@@ -68,9 +68,10 @@ const Projects: React.FC = () => {
       id: 3,
       title: 'プロジェクト計画アプリ',
       description: 'プロセスフローダイアグラムを用いたプロジェクト計画用のアプリ',
-      technologies: ['Tauri2.0', 'Rust', 'SQLite'],
+      technologies: ['Tauri2.0', 'Rust', 'SQLite', 'React'],
       image: '🗓️',
-      github: 'https://github.com/tarotarotaros/AIR-Project'
+      github: 'https://github.com/tarotarotaros/AIR-Project',
+      article: 'https://zenn.dev/tarotarotaros/articles/2025-11-16_1'
     },
     {
       id: 4,
